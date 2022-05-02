@@ -128,7 +128,7 @@ class UserController {
             
 
             var io = req.app.get('socketio');
-            io.emit("UpdateMessage","user was updated");
+            io.emit(`UpdateMessageFor${email}`,"user data was updated");
             res.json({ message :  req.body})
         } catch (e) {
             res.status(500).json({ message: e + "  err" })
